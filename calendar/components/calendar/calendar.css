@@ -1,0 +1,425 @@
+.component-calendar .view-container{
+    display: none;
+}
+
+.component-calendar .view-container.active{
+    display: block;
+}
+
+.component-calendar .calendar{
+    position: relative;
+}
+
+.component-calendar div{
+    font-family: Montserrat,Helvetica,Arial,sans-serif;
+}
+
+.component-calendar dt {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.component-calendar .list-view-container dt{
+    cursor: initial;
+}
+
+.component-calendar dl dt:last-child {
+    border-right: 1px solid #eaeaea;
+}
+
+.component-calendar .list-view-container dl dt:first-child {
+    border-left: 1px solid #eaeaea;
+}
+
+.component-calendar * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.component-calendar dl {
+    display: table;
+    margin: 0;
+    border: none;
+    padding: 0;
+    table-layout: fixed;
+}
+
+.component-calendar .view-container.month-view-container dl {
+    display: table;
+    margin: 0;
+    border: none;
+    padding: 0;
+    table-layout: fixed;
+}
+
+.component-calendar dt {
+    display: table-cell;
+    transition: all .66s ease;
+    color: #4d4d4d;
+    background: #fff;
+    font-size: 14px;
+}
+
+.component-calendar dl {
+    width: 100%;
+}
+
+.component-calendar dl dt {
+    width: auto;
+    height: 136px;
+    line-height: 1.2;
+    text-align: left;
+    padding: 5px 7px;
+    position: relative;
+}
+
+.component-calendar .calendar-table-head dt {
+    height: 30px !important;
+    border-top: 1px solid #eaeaea;
+    background-color: #f8f8f8;
+}
+
+.component-calendar .calendar-nullday {
+    color: #cacaca;
+}
+
+.component-calendar .month-view-container dt{
+    border-bottom: 1px solid #eaeaea;
+    border-left: 1px solid #eaeaea;
+}
+
+.component-calendar .list-view-container dl{
+    border-bottom: 1px solid #eaeaea;
+}
+
+@media only screen and (max-width: 1200px){
+    .component-calendar dl dt {
+        height: 100px;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .component-calendar dl dt {
+        height: 40px;
+    }
+}
+
+/* Events */
+.component-calendar .has-event:after {
+    background-color: #40d9f1;
+    border-radius: 50%;
+    display: block;
+    content: '';
+    width: 8px;
+    height: 8px;
+    bottom: 14px;
+    left: 50%;
+    margin: -4px 0 0 -4px;
+    position: absolute;
+    transition: all .25s ease;
+}
+
+.component-calendar .has-event:after {
+    bottom: auto;
+    top: 24px;
+    left: 7px;
+    margin: 0;
+}
+
+@media only screen and (max-width: 479px) {
+    .component-calendar .has-event:after {
+        width:4px;
+        height: 4px
+    }
+}
+
+@media only screen and (min-width: 961px) {
+    .component-calendar .has-event:after {
+        width:6px;
+        height: 6px;
+        bottom: 6px
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    .component-calendar .has-event:after {
+        width: 6px;
+        height: 6px;
+        bottom: 6px;
+    }
+}
+
+.component-calendar .has-event a {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    color: #4d4d4d;
+    transition: all .25s ease;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.component-calendar .has-event a {
+    color: #4d4d4d;
+}
+
+.component-calendar .month-view-container .calendar-row dt:hover {
+    background: #f4f4f4;
+}
+
+.component-calendar .calendar-row dt.has-event:hover {
+    background: #40d9f1;
+}
+
+/* Navigator */
+.component-calendar .navigator-container{
+    text-align: center;
+}
+
+.component-calendar .calendar-header h2 {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+}
+
+.component-calendar .previous-month {
+    left: 0;
+}
+
+.component-calendar .next-month {
+    right: 0;
+}
+
+.component-calendar .next-month, .previous-month {
+    top: 0;
+}
+
+.component-calendar .previous-month, .component-calendar .next-month {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    min-width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #fff;
+    color: #a9a9a9;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #efefef;
+    border-top: none;
+    box-shadow: 0 2px 0 0 rgba(0,0,0,.015);
+    transition: all .33s ease;
+}
+
+.component-calendar .previous-month, .component-calendar .next-month {
+    border-radius: 2px;
+    top: 40px;
+    border: 1px solid #eee;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    z-index: 1;
+}
+
+.component-calendar .previous-month, .component-calendar .next-month {
+    top: 0;
+}
+
+.component-calendar .calendar-header {
+    position: relative;
+    margin-top: 2px;
+    margin-bottom: 30px;
+}
+
+.component-calendar .calendar-header h2 {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.14;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 1200px){
+    .component-calendar .calendar-header h2 {
+        font-size: 16px;
+        margin-top: 33px;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .component-calendar .previous-month {
+        /*top: 28px;*/
+        font-size: 10px;
+    }
+
+    .component-calendar .calendar-header h2 {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 479px){
+    .component-calendar .next-month, .component-calendar .previous-month {
+        /*top: 16px;*/
+        font-size: 0;
+        padding: 4px 0;
+        text-align: center;
+        min-width: 33px;
+    }
+
+    .component-calendar .calendar-header h2 {
+        font-size: 13px;
+        margin-top: 8px;
+    }
+}
+
+/* Filters */
+.component-calendar .totalcal-box {
+    position: relative;
+    border: 1px solid #efefef;
+    padding: 20px 5px;
+    margin: 0 0 20px;
+    background: #fafafa;
+    overflow: hidden;
+    box-shadow: 0 3px 2px 0 rgba(0,0,0,.012);
+}
+
+.component-calendar .totalcal-box .totalcal-view {
+    text-align: right;
+    float: right;
+}
+
+.component-calendar .totalcal-box .totalcal-view span{
+    width: auto;
+    min-height: 36px;
+    height: 36px;
+    line-height: 36px;
+    background: #fff;
+    font-size: 13px;
+    color: #777;
+    border: 1px solid #efefef;
+    margin: 0 0 0 -1px;
+    float: left;
+    padding: 0 5px;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+}
+
+.component-calendar .totalcal-box .totalcal-view span {
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: Montserrat,Helvetica,Arial,sans-serif;
+    font-size: 11px;
+    padding: 0 12px;
+    cursor: pointer;
+}
+
+.component-calendar .totalcal-box .totalcal-view .totalcalview-selected {
+    color: #fff;
+    background: #40d9f1;
+    border-color: #40d9f1;
+}
+
+/* Loading*/
+.component-calendar .navigator-loading.active {
+    width: 100%;
+    height: 100%;
+    background: no-repeat rgba(255, 255, 255, 0.88) url(../../assets/img/ajax-loader.gif) center;
+    border-style: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 9;
+}
+
+/* List View */
+.component-calendar .list-view-container .event-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.component-calendar .list-view-container .event-dot {
+    background-color: #3a87ad;
+}
+
+.component-calendar .list-view-container .calendar-day-head .week-day{
+    float: left;
+}
+
+.component-calendar .list-view-container .calendar-day-head .day{
+    float: right;
+}
+
+.component-calendar .list-view-container .event-client{
+    width: 180px;
+    min-width: 180px;
+    margin-right: auto;
+}
+
+.component-calendar .list-view-container .event-marker{
+    width: 20px;
+    min-width: 20px;
+}
+
+.component-calendar .list-view-container .event-title{
+    width: 100px;
+}
+
+.component-calendar .list-view-container dl dt {
+    height: 33px;
+}
+
+/* EVENTS LIST AND DETAIL */
+.component-calendar .view-container.list-view-container.active{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.event-list{
+    width: 100%;
+}
+
+.event-detail{
+    width: 0%;
+}
+
+.event-list, .event-detail{
+    transition-duration: 2s;
+    transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+}
+
+.open-detail .event-list{
+    width: 70%;
+}
+
+.open-detail .event-detail{
+    width: 30%;
+}
+
+dl.calendar-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 767px){
+    .open-detail .event-list{
+        width: 30%;
+    }
+    
+    .open-detail .event-detail{
+        width: 70%;
+    }
+}

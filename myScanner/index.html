@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>QR Code Scanner</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="QR Code Scanner is the fastest and most user-friendly web application.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#a040a0">
+        <!--
+            <meta name="mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-title" content="QR Scanner">
+            <meta name="apple-mobile-web-app-status-bar-style" content="#e4e4e4">
+            <meta name="apple-mobile-web-app-capable" content="yes">
+        -->
+        <meta name="application-name" content="QR Scanner">
+        <meta name="msapplication-TileColor" content="#e4e4e4">
+        <meta name="msapplication-TileImage" content="./assets/images/touch/mstile-150x150.png">
+        <meta name="theme-color" content="#fff">
+        <link rel="apple-touch-icon" href="./assets/images/touch/apple-touch-icon.jpg">
+        <link rel="icon" type="image/png" href="./assets/images/touch/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="./assets/images/touch/favicon-16x16.png" sizes="16x16">
+        <link rel="shortcut icon" href="./assets/images/touch/favicon.ico">
+        <link rel="manifest" href="manifest.json">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <!--
+            <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        -->
+    </head>
+
+    <body>
+        
+        <div class="app__layout">
+                <header class="app__header">
+                    <div class="nav">
+                        <span class="float-right" onclick="toogleRecents()">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <!--
+                            <div class="bar3"></div>
+                            <img class="icon" src="./assets/icons/switch-camera.svg">-->
+                        </span>
+                    </div>
+                    <div class="app__recents">
+                        <h1>Recentes</h1>
+                        <div class="recents-list">
+                            <span class="recent-item" data-id="1" onclick="openModal(event)">Teste1</span>
+                        </div>
+                    </div>
+                </header>
+                <main class="app__layout-content">
+                    <video id="scanner" class="scanner" playsinline autoplay></video>
+                </main>
+                <footer class="app__footer">
+                    <span class="album">
+                        <img class="icon icon-album" src="./assets/icons/album.svg">
+                        <input id="chooseFile" type="file" name="pic" accept="image/*">
+                    </span>
+                    <span class="switch-camera" onclick="flipCam()">
+                        <img class="icon" src="./assets/icons/switch-camera.svg">
+                    </span>
+                </footer>
+        </div>
+
+        <div id="overlay" class="app__overlay" style="border: solid 2px #FFF;">
+            <div class="app__overlay-frame"></div>
+            <!--
+                <div class="custom-scanner" style="display: block;"></div>
+            -->
+        </div>
+
+        <div class="modal fade show" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="padding-right: 17px;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <i class="now-ui-icons ui-1_simple-remove"></i>
+                        </button>
+                        <h4 class="title title-up">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="closeModal()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="./dist/qcode-decoder.min.js"></script>
+    <script type="text/javascript" src="./assets/js/main.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('./sw.js').then(function(registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }).catch(function(err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+</html>
+
+<!--
+    <script type="text/javascript" src="./assets/js/jsqrcode/grid.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/version.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/detector.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/formatinf.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/errorlevel.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/bitmat.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/datablock.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/bmparser.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/datamask.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/rsdecoder.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/gf256poly.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/gf256.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/decoder.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/qrcode.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/findpat.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/alignpat.js"></script>
+    <script type="text/javascript" src="./assets/js/jsqrcode/databr.js"></script>
+-->
