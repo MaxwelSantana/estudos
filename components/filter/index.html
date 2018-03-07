@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>Filter Component</title>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    </head>
+    <body>
+        <section class="container">
+        <!--
+            <div class="filter-box">
+                <div class="filter-row">
+                    <div class="form-group col-md-6">
+                        <input class="form-control" type="text" placeholder="Insira seu Texto aqui">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input class="form-control" type="text" placeholder="Insira seu Texto aqui">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input class="form-control" type="text" placeholder="Insira seu Texto aqui">
+                    </div>
+                </div>
+                <div class="filter-row">
+                    <div class="form-group col-md-6">
+                        <input class="form-control" type="text" placeholder="Insira seu Texto aqui">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input class="form-control" type="text" placeholder="Insira seu Texto aqui">
+                    </div>
+                </div>
+                <div class="filter-row">
+                    <div class="form-group col-md-12">
+                        <input class="form-control" type="text" placeholder="Insira seu Texto aqui">
+                    </div>
+                </div>
+            </div>
+        -->
+            <div class="filter-box flex-column">
+                <div class="flex-row flex-wrap additional-filter">
+                    <!-- ROW 1 -->
+                    <div class="field has-icon col-8 field-client">
+                        <i class="far fa-folder"></i>
+                        <select>
+                            <option value="">Cliente</option>
+                            <option class="level-0" value="57">College</option>
+                            <option class="level-0" value="36">Events</option>
+                            <option class="level-1" value="37">&nbsp;&nbsp;&nbsp;meeting</option>
+                            <option class="level-1" value="56">&nbsp;&nbsp;&nbsp;Risotto Restaurant</option>
+                            <option class="level-0" value="47">Exhibitions</option>
+                            <option class="level-0" value="58">learning</option>
+                            <option class="level-0" value="46">Sport</option>
+                        </select>
+                    </div>
+                    <div class="field has-icon col-2 field-initial-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <input type="text" value="28/02/2018">
+                    </div>
+                    <div class="field has-icon col-2 field-final-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <input type="text" value="28/02/2018">
+                    </div>
+
+                    <!-- ROW 2 -->
+                    <div class="field has-icon col-8 field-store">
+                        <i class="far fa-folder"></i>
+                        <select>
+                            <option value="">Loja</option>
+                            <option class="level-0" value="57">College</option>
+                            <option class="level-0" value="36">Events</option>
+                            <option class="level-1" value="37">&nbsp;&nbsp;&nbsp;meeting</option>
+                            <option class="level-1" value="56">&nbsp;&nbsp;&nbsp;Risotto Restaurant</option>
+                            <option class="level-0" value="47">Exhibitions</option>
+                            <option class="level-0" value="58">learning</option>
+                            <option class="level-0" value="46">Sport</option>
+                        </select>
+                    </div>
+                    <div class="field has-icon col-4 field-status">
+                        <i class="fas fa-tasks"></i>
+                        <select>
+                            <option value="">Status</option>
+                            <option class="level-0" value="57">College</option>
+                            <option class="level-0" value="36">Events</option>
+                            <option class="level-1" value="37">&nbsp;&nbsp;&nbsp;meeting</option>
+                            <option class="level-1" value="56">&nbsp;&nbsp;&nbsp;Risotto Restaurant</option>
+                            <option class="level-0" value="47">Exhibitions</option>
+                            <option class="level-0" value="58">learning</option>
+                            <option class="level-0" value="46">Sport</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex-row space-between">
+                    <div class="field has-icon field-search">
+                        <i class="fas fa-search"></i>
+                        <input type="search" placeholder="buscar...">
+                    </div>
+                    <div class="field has-icon button-expand-filter" onclick="toogleFilters()">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+
+    <script src="./assets/js/main.js"></script>
+</html>

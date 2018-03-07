@@ -423,3 +423,108 @@ dl.calendar-row {
         width: 70%;
     }
 }
+
+/* FILTER BOX */
+.field input::-moz-placeholder {
+    color: #999;
+    opacity: 1
+}
+
+.field input::-ms-input-placeholder {
+    color: #999;
+}
+
+.field input::-webkit-input-placeholder {
+    color: #999;
+}
+
+.filter-box {
+    position: relative;
+    border: 1px solid #efefef;
+    padding: 20px 5px;
+    margin: 0 0 20px;
+    background: #fafafa;
+    overflow: hidden;
+    box-shadow: 0 3px 2px 0 rgba(0,0,0,.012);
+}
+
+.filter-row {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.filter-box *{
+    box-sizing: border-box;
+}
+
+.field i {
+    float: left;
+    margin: 0;
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border: 1px solid #efefef;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 15px;
+    color: #888;
+}
+
+.field select, .field input {
+    width: auto;
+    min-height: 36px;
+    height: 36px;
+    line-height: 36px;
+    background: #fff;
+    font-size: 13px;
+    /*color: #777;*/
+    color: #333;
+    border: 1px solid #efefef;
+    margin: 0 0 0 -1px;
+    float: left;
+    padding: 0 5px;
+    padding-top: 2px;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+}
+
+.field select, .field input {
+    width: 100%;
+}
+
+.field.has-icon select, .field.has-icon input {
+    width: calc(100% - 36px);
+}
+
+.field select:focus, .field input:focus {
+    outline: 0;
+}
+
+.field{
+    padding: 0px 10px;
+}
+
+/* BOOTSTRAP */
+.col-12{
+    width: 100%;
+}
+
+.col-8{
+    width: 66.66666667%;
+}
+
+.col-6{
+    width: 50%;
+}
+
+.col-4{
+    width: 33.333333333%;
+}
+
+.col-3{
+    width: 25%;
+}
+
+.col-2{
+    width: 16.66666667%;
+}
