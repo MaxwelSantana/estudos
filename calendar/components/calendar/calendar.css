@@ -23,14 +23,6 @@
     cursor: initial;
 }
 
-.component-calendar dl dt:last-child {
-    border-right: 1px solid #eaeaea;
-}
-
-.component-calendar .list-view-container dl dt:first-child {
-    border-left: 1px solid #eaeaea;
-}
-
 .component-calendar * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -91,6 +83,9 @@
 
 .component-calendar .list-view-container dl{
     border-bottom: 1px solid #eaeaea;
+    border-left: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 1200px){
@@ -102,6 +97,14 @@
 @media only screen and (max-width: 767px){
     .component-calendar dl dt {
         height: 40px;
+    }
+
+    .component-calendar dl dt{
+        display: none;
+    }
+
+    .component-calendar dl dt:first-child, .component-calendar dl dt:last-child{
+        display: block;
     }
 }
 
@@ -348,10 +351,8 @@
     width: 10px;
     height: 10px;
     border-radius: 5px;
-}
-
-.component-calendar .list-view-container .event-dot {
     background-color: #3a87ad;
+    margin-right: 10px
 }
 
 .component-calendar .list-view-container .calendar-day-head .week-day{
@@ -363,18 +364,33 @@
 }
 
 .component-calendar .list-view-container .event-client{
-    width: 180px;
-    min-width: 180px;
-    margin-right: auto;
+    min-width: 250px;
+    max-width: 250px;
+    min-width: 15em;
+    max-width: 15em;
 }
 
-.component-calendar .list-view-container .event-marker{
-    width: 20px;
-    min-width: 20px;
+.component-calendar .list-view-container .event-region, .component-calendar .list-view-container .event-store-number{
+    min-width: 100px;
+    max-width: 100px;
 }
 
-.component-calendar .list-view-container .event-title{
-    width: 100px;
+.component-calendar .list-view-container .event-store{
+    max-width: 500px;
+}
+
+.component-calendar .list-view-container .event-day{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.component-calendar .list-view-container .event-status{
+    margin-left: auto;
+    min-width: 150px;
+    max-width: 150px;
+    min-width: 9em;
+    max-width: 9em;
 }
 
 .component-calendar .list-view-container dl dt {
@@ -390,6 +406,7 @@
 
 .event-list{
     width: 100%;
+    background-color: #eaeaea;
 }
 
 .event-detail{
@@ -412,6 +429,7 @@
 dl.calendar-row {
     display: flex;
     flex-direction: row;
+    background-color: white;
 }
 
 @media only screen and (max-width: 767px){
@@ -422,6 +440,46 @@ dl.calendar-row {
     .open-detail .event-detail{
         width: 70%;
     }
+}
+
+/* DETAIL */
+
+.event-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    white-space: nowrap;
+    border-bottom: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+}
+
+.event-detail dl{
+    border-left: none;
+    border-right: none;
+}
+
+.event-detail .event-content {
+    height: calc(100% - 64px);
+}
+
+.event-detail .event-content, .event-detail .event-footer {
+    padding: 5px 7px;
+}
+
+.event-detail .event-content label{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.event-detail .event-content p{
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.event-detail .event-footer{
+    height: 33px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 /* FILTER BOX */
