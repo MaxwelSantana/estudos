@@ -1,0 +1,70 @@
+.event {
+    padding: 4px 14px;
+    /* height: 1em; */
+    width: 156px;
+    line-height: 16px;
+    position: absolute;
+    margin: 0 5px;
+    border-radius: 2px;
+    cursor: pointer;
+    color: black;
+    overflow: visible;
+}
+
+.my-event {
+    background-color: rgb(121, 134, 203);
+}
+
+/*
+.calendar-body .week-row .week-row-days-events .event-day div:nth-of-type(1){
+    top: 0;
+}
+
+.calendar-body .week-row .week-row-days-events .event-day div:nth-of-type(2){
+    top: calc(1em + 5px);
+}
+
+.calendar-body .week-row .week-row-days-events .event-day div:nth-of-type(3){
+    top: calc(2em + 10px);
+}
+*/
+
+.event[data-order="1"] {
+    top: 0;
+}
+
+.event[data-order="2"] {
+    top: calc(1em + 12px);
+}
+
+.event[data-order="3"] {
+    top: calc(2em + 24px);
+}
+
+.event[data-event-days="1"] {
+    width: calc(14.29% - 10px);
+}
+
+.event[data-event-days="2"] {
+    width: calc(28.57% - 10px);
+}
+
+.event[data-event-days="3"] {
+    width: calc(42.86% - 10px);
+}
+
+.event[data-event-days="4"] {
+    width: calc(57.14% - 10px);
+}
+
+.event[data-event-days="5"] {
+    width: calc(71.43% - 10px);
+}
+
+.event[data-event-days="6"] {
+    width: calc(85.71% - 10px);
+}
+
+.event[data-event-days="7"] {
+    width: calc(100% - 10px);
+}
