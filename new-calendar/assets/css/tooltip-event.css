@@ -1,0 +1,93 @@
+.tooltip-event {
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    margin: auto;
+    display: flex;
+    position: relative;
+    -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+    visibility: hidden;
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 150%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip-event::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 20%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+}
+
+.tooltip.open-detail .tooltip-event {
+    visibility: visible;
+    display: flex;
+}
+
+.tooltip-event .btn-close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+.client-detail {
+    width: 40%;
+    border-right: 1px solid #eaeaea;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.client-detail-logo, .client-detail-content {
+    flex: 1;
+    width: 100%;
+    align-items: center;
+}
+
+.client-detail-logo {
+    margin-bottom: 5px;
+}
+
+.event-detail {
+    width: 60%;
+}
+
+.client-detail, .event-detail-content {
+    padding: 45px 20px;
+}
+
+.event-detail-content {
+    border-bottom: 1px solid #eaeaea;
+    flex: 2;
+}
+
+.event-detail-actions {
+    flex: 1;
+}
+
+.event-detail-actions .btn {
+    width: 50%;
+    background-color: transparent;
+}
+
+.event-detail-actions .btn-edit {
+    color: blue;   
+}
+
+.event-detail-actions .btn-delete {
+    color: red;
+    border-left: 1px solid#eaeaea;
+}
+
+.client-logo {
+    border-radius: 50%;
+    width: 100%; 
+}
+

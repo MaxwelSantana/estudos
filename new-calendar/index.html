@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="assets/css/event.css">
         <link rel="stylesheet" href="assets/css/modal.css">
         <link rel="stylesheet" href="assets/css/tooltip.css">
+        <link rel="stylesheet" href="assets/css/tooltip-event.css">
+        <link rel="stylesheet" href="assets/css/more-events.css">
     </head>
     <body>
         <!--div class="menu-lateral">
@@ -19,7 +21,29 @@
             <div class="search-bar">
             </div>
         </header>
-
+        <div class="tooltip-event">
+            <button type="button" class="btn-close" aria-label="Close" onclick="closeDetails(event);">
+                <span aria-hidden="true" class="white-text">×</span>
+            </button>
+            <div class="client-detail flex-column">
+                <div class="client-detail-content">
+                    <img src="assets/img/img_avatar3.png" 
+                        alt="Avatar" class="client-logo">
+                </div>                
+                <div class="client-detail-content flex-column">
+                    <h4>Client Details</h4>
+                </div>
+            </div>
+            <div class="event-detail flex-column">
+                <div class="event-detail-content flex-column">
+                    <h4>Event Details</h4>
+                </div>
+                <div class="event-detail-actions flex-row">
+                    <button class="btn btn-edit"><i class="fa fa-edit"></i> Edit</button>
+                    <button class="btn btn-delete"><i class="fa fa-trash-alt"></i> Delete</button>
+                </div>
+            </div>
+        </div>
         <main class="main-content">
             <!--aside class="side-bar">
                 <div class="side-content">
@@ -52,9 +76,9 @@
                             <button class="btn-view-month md-button no-margin active"><i class="fas fa-list"></i><span> Month</span></button>
                         </div>
                         <div class="current-month">
-                            <button class="btn-previous-month"></button>
+                            <!--button class="btn-previous-month"></button-->
                             <span class="title-current-month">April 2018</span>
-                            <button class="btn-next-month"></button>
+                            <!--button class="btn-next-month"></button-->
                         </div>
                         <div class="current-day">
                             <button class="btn-today md-button no-margin active"><i class="fas fa-list"></i><span> Today</span></button>
@@ -132,28 +156,128 @@
                             </div>
                             <div class="week-row-days-events">
                                 <div class="event-days">
-                                    <div class="event-day" data-day-index="1" ondrop="drop(this, event)" ondragover="allowDrop(event)">
-                                        <div class="event my-event" id="draggable-event-1" data-event-days="4" ondragstart="dragStart(event)" draggable="true">
-                                            <div class="tooltip">Client 1
-                                                <span class="tooltiptext">Tooltip text</span>
+                                    <div class="events-content hide-events">
+                                        <div class="event-day" data-day-index="1" ondrop="drop(this, event)" ondragover="allowDrop(event)">
+                                            <div class="event-day-header">
+                                                <button type="button" class="btn-close" aria-label="Close" onclick="hideMoreEvents(event);">
+                                                    <span aria-hidden="true">×</span>
+                                                </button>
+                                            </div>
+                                            <div class="event my-event" id="draggable-event-1" data-event-days="4" ondragstart="dragStart(event)" draggable="true">
+                                                <div class="tooltip" onclick="showDetails(event)">Client 1
+                                                    <div class="tooltip-event" onclick="event.stopPropagation();">
+                                                        <button type="button" class="btn-close" aria-label="Close" onclick="closeDetails(event);">
+                                                            <span aria-hidden="true" class="white-text">×</span>
+                                                        </button>
+                                                        <div class="client-detail flex-column">
+                                                            <div class="client-detail-content">
+                                                                <img src="assets/img/img_avatar3.png" 
+                                                                    alt="Avatar" class="client-logo">
+                                                            </div>                
+                                                            <div class="client-detail-content flex-column">
+                                                                <h4>Client Details</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="event-detail flex-column">
+                                                            <div class="event-detail-content flex-column">
+                                                                <h4>Event Details</h4>
+                                                            </div>
+                                                            <div class="event-detail-actions flex-row">
+                                                                <button class="btn btn-edit"><i class="fa fa-edit"></i> Edit</button>
+                                                                <button class="btn btn-delete"><i class="fa fa-trash-alt"></i> Delete</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="event my-event" id="draggable-event-2" data-event-days="1" ondragstart="dragStart(event)" draggable="true">
+                                                <div class="tooltip" onclick="showDetails(event)">Client 2
+                                                    <div class="tooltip-event" onclick="event.stopPropagation();">
+                                                        <button type="button" class="btn-close" aria-label="Close" onclick="closeDetails(event);">
+                                                            <span aria-hidden="true" class="white-text">×</span>
+                                                        </button>
+                                                        <div class="client-detail flex-column">
+                                                            <div class="client-detail-content">
+                                                                <img src="assets/img/img_avatar3.png" 
+                                                                    alt="Avatar" class="client-logo">
+                                                            </div>                
+                                                            <div class="client-detail-content flex-column">
+                                                                <h4>Client Details</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="event-detail flex-column">
+                                                            <div class="event-detail-content flex-column">
+                                                                <h4>Event Details</h4>
+                                                            </div>
+                                                            <div class="event-detail-actions flex-row">
+                                                                <button class="btn btn-edit"><i class="fa fa-edit"></i> Edit</button>
+                                                                <button class="btn btn-delete"><i class="fa fa-trash-alt"></i> Delete</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="event my-event" id="draggable-event-3" data-event-days="2" ondragstart="dragStart(event)" draggable="true">
+                                                <div class="tooltip" onclick="showDetails(event)">Client 3
+                                                    <div class="tooltip-event" onclick="event.stopPropagation();">
+                                                        <button type="button" class="btn-close" aria-label="Close" onclick="closeDetails(event);">
+                                                            <span aria-hidden="true" class="white-text">×</span>
+                                                        </button>
+                                                        <div class="client-detail flex-column">
+                                                            <div class="client-detail-content">
+                                                                <img src="assets/img/img_avatar3.png" 
+                                                                    alt="Avatar" class="client-logo">
+                                                            </div>                
+                                                            <div class="client-detail-content flex-column">
+                                                                <h4>Client Details</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="event-detail flex-column">
+                                                            <div class="event-detail-content flex-column">
+                                                                <h4>Event Details</h4>
+                                                            </div>
+                                                            <div class="event-detail-actions flex-row">
+                                                                <button class="btn btn-edit"><i class="fa fa-edit"></i> Edit</button>
+                                                                <button class="btn btn-delete"><i class="fa fa-trash-alt"></i> Delete</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="event my-event" id="draggable-event-4" data-event-days="2" ondragstart="dragStart(event)" draggable="true">
+                                                <div class="tooltip" onclick="showDetails(event)">Client 4
+                                                    <div class="tooltip-event" onclick="event.stopPropagation();">
+                                                        <button type="button" class="btn-close" aria-label="Close" onclick="closeDetails(event);">
+                                                            <span aria-hidden="true" class="white-text">×</span>
+                                                        </button>
+                                                        <div class="client-detail flex-column">
+                                                            <div class="client-detail-content">
+                                                                <img src="assets/img/img_avatar3.png" 
+                                                                    alt="Avatar" class="client-logo">
+                                                            </div>                
+                                                            <div class="client-detail-content flex-column">
+                                                                <h4>Client Details</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="event-detail flex-column">
+                                                            <div class="event-detail-content flex-column">
+                                                                <h4>Event Details</h4>
+                                                            </div>
+                                                            <div class="event-detail-actions flex-row">
+                                                                <button class="btn btn-edit"><i class="fa fa-edit"></i> Edit</button>
+                                                                <button class="btn btn-delete"><i class="fa fa-trash-alt"></i> Delete</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="event my-event" id="draggable-event-2" data-event-days="1" ondragstart="dragStart(event)" draggable="true" onclick="showModalEvents(event)">
-                                            <span>Client 2</span>
-                                        </div>
-                                        <div class="event my-event" id="draggable-event-3" data-event-days="2" ondragstart="dragStart(event)" draggable="true">
-                                            <span>Client 3</span>
-                                        </div>
+                                        <a class="show-more-events" onclick="showMoreEvents(event)">+Mostrar mais</a>
                                     </div>
                                     <div class="event-day" data-day-index="2" ondrop="drop(this, event)" ondragover="allowDrop(event)"></div>
                                     <div class="event-day" data-day-index="3" ondrop="drop(this, event)" ondragover="allowDrop(event)"></div>
                                     <div class="event-day" data-day-index="4" ondrop="drop(this, event)" ondragover="allowDrop(event)"></div>
-                                    <div class="event-day" data-day-index="5" ondrop="drop(this, event)" ondragover="allowDrop(event)">
-                                        <div class="modal-events">
-                                            <div class="modal-header"></div>
-                                            <div class="modal-body"></div>
-                                        </div>
-                                    </div>
+                                    <div class="event-day" data-day-index="5" ondrop="drop(this, event)" ondragover="allowDrop(event)"></div>
                                     <div class="event-day" data-day-index="6" ondrop="drop(this, event)" ondragover="allowDrop(event)"></div>
                                     <div class="event-day" data-day-index="7" ondrop="drop(this, event)" ondragover="allowDrop(event)"></div>
                                 </div>
@@ -208,7 +332,124 @@
                                 <div class="event-days">
                                     <div class="event-day" data-day-index="8" ondrop="drop(this, event)" ondragover="allowDrop(event)"></div>
                                     <div class="event-day" data-day-index="9" ondrop="drop(this, event)" ondragover="allowDrop(event)"></div>
-                                    <div class="event-day" data-day-index="10" ondrop="drop(this, event)" ondragover="allowDrop(event)"></div>
+                                    <div class="events-content hide-events">
+                                        <div class="event-day" data-day-index="10" ondrop="drop(this, event)" ondragover="allowDrop(event)">
+                                            <div class="event-day-header">
+                                                <button type="button" class="btn-close" aria-label="Close" onclick="hideMoreEvents(event);">
+                                                    <span aria-hidden="true">×</span>
+                                                </button>
+                                            </div>
+                                            <div class="event my-event" id="draggable-event-5" data-event-days="4" ondragstart="dragStart(event)" draggable="true">
+                                                <div class="tooltip" onclick="showDetails(event)">Client 1
+                                                    <div class="tooltip-event" onclick="event.stopPropagation();">
+                                                        <button type="button" class="btn-close" aria-label="Close" onclick="closeDetails(event);">
+                                                            <span aria-hidden="true" class="white-text">×</span>
+                                                        </button>
+                                                        <div class="client-detail flex-column">
+                                                            <div class="client-detail-content">
+                                                                <img src="assets/img/img_avatar3.png" 
+                                                                    alt="Avatar" class="client-logo">
+                                                            </div>                
+                                                            <div class="client-detail-content flex-column">
+                                                                <h4>Client Details</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="event-detail flex-column">
+                                                            <div class="event-detail-content flex-column">
+                                                                <h4>Event Details</h4>
+                                                            </div>
+                                                            <div class="event-detail-actions flex-row">
+                                                                <button class="btn btn-edit"><i class="fa fa-edit"></i> Edit</button>
+                                                                <button class="btn btn-delete"><i class="fa fa-trash-alt"></i> Delete</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="event my-event" id="draggable-event-6" data-event-days="1" ondragstart="dragStart(event)" draggable="true">
+                                                <div class="tooltip" onclick="showDetails(event)">Client 2
+                                                    <div class="tooltip-event" onclick="event.stopPropagation();">
+                                                        <button type="button" class="btn-close" aria-label="Close" onclick="closeDetails(event);">
+                                                            <span aria-hidden="true" class="white-text">×</span>
+                                                        </button>
+                                                        <div class="client-detail flex-column">
+                                                            <div class="client-detail-content">
+                                                                <img src="assets/img/img_avatar3.png" 
+                                                                    alt="Avatar" class="client-logo">
+                                                            </div>                
+                                                            <div class="client-detail-content flex-column">
+                                                                <h4>Client Details</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="event-detail flex-column">
+                                                            <div class="event-detail-content flex-column">
+                                                                <h4>Event Details</h4>
+                                                            </div>
+                                                            <div class="event-detail-actions flex-row">
+                                                                <button class="btn btn-edit"><i class="fa fa-edit"></i> Edit</button>
+                                                                <button class="btn btn-delete"><i class="fa fa-trash-alt"></i> Delete</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="event my-event" id="draggable-event-7" data-event-days="2" ondragstart="dragStart(event)" draggable="true">
+                                                <div class="tooltip" onclick="showDetails(event)">Client 3
+                                                    <div class="tooltip-event" onclick="event.stopPropagation();">
+                                                        <button type="button" class="btn-close" aria-label="Close" onclick="closeDetails(event);">
+                                                            <span aria-hidden="true" class="white-text">×</span>
+                                                        </button>
+                                                        <div class="client-detail flex-column">
+                                                            <div class="client-detail-content">
+                                                                <img src="assets/img/img_avatar3.png" 
+                                                                    alt="Avatar" class="client-logo">
+                                                            </div>                
+                                                            <div class="client-detail-content flex-column">
+                                                                <h4>Client Details</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="event-detail flex-column">
+                                                            <div class="event-detail-content flex-column">
+                                                                <h4>Event Details</h4>
+                                                            </div>
+                                                            <div class="event-detail-actions flex-row">
+                                                                <button class="btn btn-edit"><i class="fa fa-edit"></i> Edit</button>
+                                                                <button class="btn btn-delete"><i class="fa fa-trash-alt"></i> Delete</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="event my-event" id="draggable-event-8" data-event-days="2" ondragstart="dragStart(event)" draggable="true">
+                                                <div class="tooltip" onclick="showDetails(event)">Client 4
+                                                    <div class="tooltip-event" onclick="event.stopPropagation();">
+                                                        <button type="button" class="btn-close" aria-label="Close" onclick="closeDetails(event);">
+                                                            <span aria-hidden="true" class="white-text">×</span>
+                                                        </button>
+                                                        <div class="client-detail flex-column">
+                                                            <div class="client-detail-content">
+                                                                <img src="assets/img/img_avatar3.png" 
+                                                                    alt="Avatar" class="client-logo">
+                                                            </div>                
+                                                            <div class="client-detail-content flex-column">
+                                                                <h4>Client Details</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="event-detail flex-column">
+                                                            <div class="event-detail-content flex-column">
+                                                                <h4>Event Details</h4>
+                                                            </div>
+                                                            <div class="event-detail-actions flex-row">
+                                                                <button class="btn btn-edit"><i class="fa fa-edit"></i> Edit</button>
+                                                                <button class="btn btn-delete"><i class="fa fa-trash-alt"></i> Delete</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="show-more-events" onclick="showMoreEvents(event)">+Mostrar mais</a>
+                                    </div>
                                     <div class="event-day" data-day-index="11" ondrop="drop(this, event)" ondragover="allowDrop(event)"></div>
                                     <div class="event-day" data-day-index="12" ondrop="drop(this, event)" ondragover="allowDrop(event)"></div>
                                     <div class="event-day" data-day-index="13" ondrop="drop(this, event)" ondragover="allowDrop(event)"></div>
@@ -393,6 +634,7 @@
         </main>
         
         <script src="./assets/js/main.js"></script>
+        <script src="./assets/js/more-events.js"></script>
         <script src="./assets/js/events.js"></script>
         <script src="./assets/js/modal.js"></script>
     </body>

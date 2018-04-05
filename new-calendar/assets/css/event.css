@@ -31,14 +31,27 @@
 
 .event[data-order="1"] {
     top: 0;
+    order: 1;
 }
 
 .event[data-order="2"] {
     top: calc(1em + 12px);
+    order: 2;
 }
 
 .event[data-order="3"] {
     top: calc(2em + 24px);
+    order: 3;
+}
+
+.event[data-order="4"] {
+    top: calc(3em + 36px);
+    order: 4;
+}
+
+.event[data-order="5"] {
+    top: calc(4em + 48px);
+    order: 5;
 }
 
 .event[data-event-days="1"] {

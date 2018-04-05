@@ -49,6 +49,8 @@ function fillDay(day, event){
 function fillDays(elDay, event){
     removeAuxEvents(event);
 
+    hideMoreEvents();
+
     var days = event.dataset.eventDays;
     var day = elDay.dataset.dayIndex;
 
@@ -61,10 +63,16 @@ function fillDays(elDay, event){
 }
 
 function reorderEventsByAllDays() {
-    let allDays = Array.from(document.querySelectorAll('.event-day[data-day-index]'));
+    let allDays = Array.from(document.querySelectorAll('.event-day[data-day-index]:not(.event-day-modal)'));
     allDays.forEach(function(elDay) {
-        reorderEvents(elDay);
+        let allEvents = reorderEvents(elDay);
+        if(allEvents)
+            setTotalEventsDay(elDay, allEvents.length);
     });
+}
+
+function setTotalEventsDay(elDay, totalEvents) {
+    elDay.parentElement.dataset.totalEvents = totalEvents;
 }
 
 function reorderEvents(elDay) {
@@ -123,34 +131,47 @@ function isAuxEvent(event) {
 }
 
 function fitEventsBeetweenBodyEvents(auxEvents, events) {
-    let order = 1;
+    //let order = 1;
     let allEvents = [];
-
-    auxEvents.forEach(bodyEvent => {
-        if(bodyEvent.dataset.order == order){
-            allEvents.push(bodyEvent);
-        }else if(events.length){
-            let event = events.shift();
-            event.dataset.order = order;
-            allEvents.push(event);
-        }
-        order++;
-    });
+    let totalEvents = auxEvents.length + events.length;
     
-    if(events.length) {
-        allEvents.push(...events.map(event => {
-            event.dataset.order = order;
-            order++;
-            return event;
-        }));
+    let possibleOrders = Array.apply(null, {length: totalEvents}).map((item, index)=> index+1);
+
+    auxEvents.forEach(auxEvent => {
+        let foundOrder = possibleOrders.find(pOrder => pOrder == auxEvent.dataset.order);
+        possibleOrders.splice(possibleOrders.indexOf(foundOrder), 1);
+        allEvents.push(auxEvent);
+    });
+
+    for(let i = 0;i < events.length;i++) {
+        let order = possibleOrders.shift();
+        events[i].dataset.order = order;
+        allEvents.push(events[i]);
     }
 
     return allEvents;
 }
 
-function initialPositionEvents(){
+function initialPositionEvents() {
     let allEvents = Array.from(document.querySelectorAll('.event'));
-    allEvents.forEach(event => fillDays(getElDayByIndex(1), event));
+    allEvents.slice(0, 4).forEach(event => fillDays(getElDayByIndex(1), event));
+    allEvents.slice(4, 8).forEach(event => fillDays(getElDayByIndex(10), event));
+}
+
+function showDetails(event) {
+    removeClassAllElmnts("open-detail");
+    event.target.classList.add("open-detail");
+}
+
+function closeDetails(event) {
+    removeClassAllElmnts("open-detail");
+}
+
+function removeClassAllElmnts(classToRemove) {
+    let details = document.querySelectorAll("."+classToRemove);
+    details.forEach(detail => {
+        detail.classList.remove(classToRemove);
+    });
 }
 
 initialPositionEvents();
