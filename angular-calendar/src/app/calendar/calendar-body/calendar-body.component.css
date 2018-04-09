@@ -1,0 +1,39 @@
+.calendar-body {
+    -webkit-box-shadow: 0px 0px 20px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px -9px rgba(0,0,0,0.75);
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    background-color: white;
+    color: #BDC3D1;
+}
+
+.week-row {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #eaeaea;
+    position: relative;
+    min-height: 130px;
+}
+
+.week-row:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 480px) { 
+    .week-row {
+        min-height: 60px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .week-row {
+        min-height: 90px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .week-row {
+        min-height: 110px;
+    }
+}

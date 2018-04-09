@@ -1,0 +1,57 @@
+.week-row-days, .week-row-days-events, app-events-content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.week-row-days {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.week-row-days-events {
+    margin-top: 30px;
+    z-index: 1;
+}
+
+.week-row-days-events .event-days {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.day {
+    flex: 1 1 0%;
+    /*height: 110px;*/
+    border-right: 1px solid #eaeaea;
+    padding: 10px 15px;
+}
+
+@media (max-width: 767px) {
+    .day {
+        padding: 5px 5px;
+    }
+}
+
+.day:last-child {
+    border-right: none;
+}
+
+.day-current-month * {
+    color: #52586C;
+}
+
+.day .day-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+
+.day .day-body {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    position: relative;
+}

@@ -1,0 +1,9 @@
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+span.title-current-month {
+    font-size: xx-large;
+}

@@ -154,16 +154,17 @@ function fitEventsBeetweenBodyEvents(auxEvents, events) {
 
 function initialPositionEvents() {
     let allEvents = Array.from(document.querySelectorAll('.event'));
-    allEvents.slice(0, 4).forEach(event => fillDays(getElDayByIndex(1), event));
-    allEvents.slice(4, 8).forEach(event => fillDays(getElDayByIndex(10), event));
+    allEvents.forEach(event => fillDays(getElDayByIndex(1), event));
 }
 
 function showDetails(event) {
     removeClassAllElmnts("open-detail");
+    event.target.parentElement.style.overflow = "visible";
     event.target.classList.add("open-detail");
 }
 
 function closeDetails(event) {
+    event.target.closest(".event").style.overflow = null;
     removeClassAllElmnts("open-detail");
 }
 

@@ -8,7 +8,9 @@
     border-radius: 2px;
     cursor: pointer;
     color: black;
-    overflow: visible;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .my-event {
@@ -52,6 +54,16 @@
 .event[data-order="5"] {
     top: calc(4em + 48px);
     order: 5;
+}
+
+@media (max-width: 767px) {
+    .event[data-order="2"] {
+        top: calc(1em);
+    }
+    
+    .event[data-order="3"] {
+        top: calc(2em);
+    }
 }
 
 .event[data-event-days="1"] {

@@ -1,0 +1,11 @@
+<div class="events-content hide-events">
+    <div class="event-day" data-day-index="1" (drop)="drop($event)" (dragover)="dragOver($event)">
+        <div class="event-day-header">
+            <button type="button" class="btn-close" aria-label="Close" onclick="hideMoreEvents(event);">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+        <app-event *ngFor="let event of eventsByDay" [event]="event"></app-event>
+    </div>
+    <a class="show-more-events" onclick="showMoreEvents(event)">+Mostrar mais</a>
+</div>

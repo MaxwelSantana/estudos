@@ -124,6 +124,12 @@ span.title-current-month {
     padding: 10px 15px;
 }
 
+@media (max-width: 767px) {
+    .calendar-body .day {
+        padding: 5px 5px;
+    }
+}
+
 .calendar-body .day:last-child {
     border-right: none;
 }

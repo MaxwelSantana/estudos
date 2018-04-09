@@ -1,0 +1,15 @@
+<div class="calendar-header">
+    <div class="change-view">
+        <button class="btn-view-day md-button no-margin"><i class="fas fa-list"></i><span> Day</span></button>
+        <button class="btn-view-week md-button no-margin"><i class="fas fa-list"></i><span> Week</span></button>
+        <button class="btn-view-month md-button no-margin active"><i class="fas fa-list"></i><span> Month</span></button>
+    </div>
+    <div class="current-month">
+        <button class="btn-previous-month" (click)="previousMonth()"></button>
+        <span class="title-current-month">{{currentMonth}}</span>
+        <button class="btn-next-month" (click)="nextMonth()"></button>
+    </div>
+    <div class="current-day">
+        <button class="btn-today md-button no-margin active"><i class="fas fa-list"></i><span> Today</span></button>
+    </div>
+</div>
