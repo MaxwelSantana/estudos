@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-week-row',
@@ -14,11 +14,14 @@ export class WeekRowComponent implements OnInit {
   @Input()
   events: any[];
 
-  //events = [{clientName: 'Client 1', days: 4}, {clientName: 'Client 2', days: 2}];
+  @Output() onChangeEventDay: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  changeEventDay(event) {
+    this.onChangeEventDay.emit(event);
+  }
 }

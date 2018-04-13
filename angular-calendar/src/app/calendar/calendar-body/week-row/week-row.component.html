@@ -8,6 +8,6 @@
 </div>
 <div class="week-row-days-events">
     <div class="event-days">
-        <app-events-content *ngFor="let day of days" [events]="events" [day]="day"></app-events-content>
+        <app-events-content *ngFor="let day of days" [events]="events" [day]="day" (onChangeEventDay)="changeEventDay($event)"></app-events-content>
     </div>
 </div>

@@ -1,29 +1,29 @@
 <div class="event my-event" [ngClass]="{'open-detail': showDetail}" 
     id="draggable-event-1" data-event-days="1" [attr.data-order]="event.order"
     (dragstart)="dragStart($event, event)" draggable="true">
-  <div class="tooltip" (click)="showDetails(event)">{{event.name}}
-      <div class="tooltip-event" (click)="$event.stopPropagation();">
-          <button type="button" class="btn-close" aria-label="Close" (click)="closeDetails(event);">
-              <span aria-hidden="true" class="white-text">×</span>
-          </button>
-          <div class="client-detail flex-column">
-              <div class="client-detail-content">
-                  <img src="assets/img/img_avatar3.png" 
-                      alt="Avatar" class="client-logo">
-              </div>                
-              <div class="client-detail-content flex-column">
-                  <h4>Client Details</h4>
-              </div>
-          </div>
-          <div class="event-detail flex-column">
-              <div class="event-detail-content flex-column">
-                  <h4>Event Details</h4>
-              </div>
-              <div class="event-detail-actions flex-row">
-                  <button class="btn btn-edit"><i class="fa fa-edit"></i> Edit</button>
-                  <button class="btn btn-delete"><i class="fa fa-trash-alt"></i> Delete</button>
-              </div>
-          </div>
-      </div>
-  </div>
+    <div class="tooltip-content" (click)="showDetails(event)">{{event.name}}
+        <div class="tooltip-event" (click)="$event.stopPropagation();">
+            <button type="button" class="btn-close" aria-label="Close" (click)="closeDetails(event);">
+                <span aria-hidden="true" class="white-text">×</span>
+            </button>
+            <div class="client-detail flex-column">
+                <div class="client-detail-content">
+                    <img src="assets/img/img_avatar3.png" 
+                        alt="Avatar" class="client-logo">
+                </div>                
+                <div class="client-detail-content flex-column">
+                    <h4>Client Details</h4>
+                </div>
+            </div>
+            <div class="event-detail flex-column">
+                <div class="event-detail-content flex-column">
+                    <h4>Event Details</h4>
+                </div>
+                <div class="event-detail-actions flex-row">
+                    <button class="btn btn-edit"><i class="fa fa-edit"></i> Edit</button>
+                    <button class="btn btn-delete"><i class="fa fa-trash-alt"></i> Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

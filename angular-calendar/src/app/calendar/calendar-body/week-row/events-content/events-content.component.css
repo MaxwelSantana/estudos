@@ -24,6 +24,19 @@ a.show-more-events {
     background-color: white;
 }
 
+.events-content.show-events .event-day-modal ::ng-deep .event {
+    position: relative;
+    top: 0 !important;
+    left: 0 !important;
+    width: auto !important;
+    margin-bottom: 4px;
+}
+
+.events-content.show-events .event-day-modal ::ng-deep .event {
+    display: block;
+    visibility: visible !important;
+}
+
 .events-content .event-day-header {
     display: none;
 }
@@ -47,6 +60,6 @@ a.show-more-events {
     display: none;
 }
 
-.events-content.hide-events[data-total-events="4"] .show-more-events, .events-content.hide-events[data-total-events="5"] .show-more-events, .events-content.hide-events[data-total-events="6"] .show-more-events, .events-content.hide-events[data-total-events="7"] .show-more-events, .events-content.hide-events[data-total-events="8"] .show-more-events, .events-content.hide-events[data-total-events="9"] .show-more-events, .events-content.hide-events[data-total-events="10"] .show-more-events {
+.events-content.hide-events .show-more-events.active {
     display: block;
 }

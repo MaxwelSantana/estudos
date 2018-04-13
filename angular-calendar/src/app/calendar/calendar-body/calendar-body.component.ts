@@ -18,4 +18,10 @@ export class CalendarBodyComponent implements OnInit {
   ngOnInit() {
   }
 
+  onChangeEventDay(event) {
+    let ev = this.events.find(ev => ev.id == event.idEvent);
+    ev.date = event.day.date;
+    ev.order = event.order;
+    this.events = this.events.slice();
+  }
 }

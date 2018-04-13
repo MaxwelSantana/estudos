@@ -94,14 +94,6 @@
     width: calc(100% - 10px);
 }
 
-.events-content.show-events .event-day-modal .event {
-    position: relative;
-    top: 0 !important;
-    left: 0 !important;
-    width: auto !important;
-    margin-bottom: 4px;
-}
-
 .event[data-order="4"], .event[data-order="5"], .event[data-order="6"], .event[data-order="7"], .event[data-order="8"], .event[data-order="9"], .event[data-order="10"] {
     display: none;
 }
@@ -141,8 +133,10 @@
     display: none;
     position: absolute;
     z-index: 100;
-    top: 150%;
-    left: 50%;
+    /*top: 150%;
+    left: 50%;*/
+    top: 100%;
+    left: 20%;
     margin-left: -60px;
 }
 
@@ -157,7 +151,7 @@
     border-color: transparent transparent white transparent;
 }
 
-.open-detail .tooltip .tooltip-event {
+.open-detail .tooltip-event {
     visibility: visible;
     display: flex;
 }

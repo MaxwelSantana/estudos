@@ -12,7 +12,8 @@ export class CalendarComponent implements OnInit {
   today: any;
   days = [];
   currentMonth: string;
-  events = [{name: 'Client 1', date: moment(), num: 1, id: 1}];
+  events = [{name: 'Client 1', date: moment(), num: 1, id: 1}, {name: 'Client 2', date: moment(), num: 1, id: 2},
+            {name: 'Client 3', date: moment(), num: 1, id: 3}, {name: 'Client 4', date: moment(), num: 1, id: 4}];
 
   constructor() { }
 
@@ -51,14 +52,18 @@ export class CalendarComponent implements OnInit {
 
     while(dayOfWeek != 0){
       this.days.push({
-        num: moment(firstDayOfMonth).subtract(dayOfWeek, "day").date(), currentMonth: false
+        num: moment(firstDayOfMonth).subtract(dayOfWeek, "day").date(), 
+        currentMonth: false,
+        date: moment(firstDayOfMonth).subtract(dayOfWeek, "day")
       });
       dayOfWeek--;
     }
 
     for(let i = 1; i <= lastDayOfMonth.date(); i++){
       this.days.push({
-        num: i, currentMonth: true
+        num: i, 
+        currentMonth: true,
+        date: moment().date(i)
       });
     }
 
@@ -66,7 +71,9 @@ export class CalendarComponent implements OnInit {
     let count = 1;
     for(let i = dayOfWeek; i < 6;i++) {
       this.days.push({
-        num: moment(lastDayOfMonth).add(count, "day").date(), currentMonth: false
+        num: moment(lastDayOfMonth).add(count, "day").date(), 
+        currentMonth: false,
+        date: moment(lastDayOfMonth).add(count, "day")
       });
       count++;
     }
