@@ -1,0 +1,16 @@
+<div *ngIf="!newProject" class="card card-hover-effect">
+  <div class="card-body">
+    <h6 class="card-category">Projeto</h6>
+    <h4 class="card-title"><a href="#">{{project.name}}</a></h4>
+    <p class="card-description">{{project.description}} </p>
+  </div>
+</div>
+
+<div *ngIf="newProject" class="card card-hover-effect">
+  <div class="card-body text-center">
+    <div class="card-icon">
+      <span><i class="fa fa-plus"></i></span>
+    </div>
+    <p class="card-description">Novo Projeto</p>
+  </div>
+</div>
